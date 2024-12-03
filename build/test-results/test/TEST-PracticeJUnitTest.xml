@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="PracticeJUnitTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-12-03T21:49:50" hostname="MacBook-Pro.local" time="3.448">
+  <properties/>
+  <testcase name="successfulPracticeJUnitTest()" classname="PracticeJUnitTest" time="3.448"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+дек. 04, 2024 12:49:51 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 131, returning the closest version; found: 129; Please update to a Selenium version that supports CDP version 131
+]]></system-err>
+</testsuite>
