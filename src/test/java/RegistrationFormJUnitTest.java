@@ -3,8 +3,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationFormJUnitTest {
 
@@ -17,11 +16,13 @@ public class RegistrationFormJUnitTest {
     }
 
     @Test
-    void successfulPracticeJUnitTest() {
+    void successfulRegistrationFormJUnitTest() {
         open("/automation-practice-form");
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
         $("[id=firstName]").setValue("kotechka");
         $("[id=lastName]").setValue("kotova");
-        $("[id=userEmail]").setValue("kkk@kt.com");
+        $("[id=userEmail]").setValue("k@kt.com");
         $("[for=gender-radio-2]").click();
         $("[id=userNumber]").setValue("0001111213");
         $("[id=dateOfBirthInput]").click();
@@ -39,7 +40,7 @@ public class RegistrationFormJUnitTest {
         $("[id=submit]").click();
 
         $("[class=table-responsive]").shouldHave(text("kotechka kotova"));
-        $("[class=table-responsive]").shouldHave(text("kkk@kt.com"));
+        $("[class=table-responsive]").shouldHave(text("k@kt.com"));
         $("[class=table-responsive]").shouldHave(text("Female"));
         $("[class=table-responsive]").shouldHave(text("0001111213"));
         $("[class=table-responsive]").shouldHave(text("02 February,1999"));
