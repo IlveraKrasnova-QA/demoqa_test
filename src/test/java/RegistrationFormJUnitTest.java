@@ -1,8 +1,10 @@
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationFormJUnitTest {
@@ -34,9 +36,9 @@ public class RegistrationFormJUnitTest {
         $("[id=uploadPicture]").uploadFromClasspath("photo_2024-11-25 16.43.04.jpg");
         $("[id=currentAddress]").setValue("Moscow");
         $("[id=state]").click();
-        $("[id=react-select-3-input]").setValue("ncr").pressEnter();
+        $("[id=state]").$(byText("NCR")).click();
         $("[id=city]").click();
-        $("[id=react-select-4-input]").setValue("noi").pressEnter();
+        $("[id=city]").$(byText("Noida")).click();
         $("[id=submit]").click();
 
         $("[class=table-responsive]").shouldHave(text("kotechka kotova"));
